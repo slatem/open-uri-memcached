@@ -14,7 +14,7 @@ module OpenURI
     class << self
       # Enable caching
       def enable!
-        @cache ||= Memcached.new(host, {
+        @cache ||= Memcached::Rails.new(host, {
           :namespace => 'openuri', 
           :no_block => true,
           :buffer_requests => true
